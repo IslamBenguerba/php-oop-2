@@ -1,8 +1,9 @@
 <?php
 require_once __DIR__.'/Prodotto.php';
-class Cibo extends Prodotto
+
+class Cibo 
 {
-    
+    use Prodotto;
     protected $PesoAlimento;
     
     function __construct($_titoloAlimento,$_prezzoProdotto,$_PesoAlimento, $_animale,$cover){
@@ -11,6 +12,7 @@ class Cibo extends Prodotto
         $this->setPesoAlimento($_PesoAlimento);
         $this->setAnimale($_animale);
         $this->setImmagineProdotto($cover);
+        $this->ControllImmage();
     }
     /**
      * Get the value of PesoAlimento
@@ -33,7 +35,12 @@ class Cibo extends Prodotto
 
         return $this;
     }
+    function ControllImmage(){
+        if($this->immagineProdotto === null ){
+            // throw new Validatore('manca immagine');
+        }
+        return true;
+    }
 }
-
 
 ?>

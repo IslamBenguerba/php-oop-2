@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ .'./Prodotto.php';
-class Cuccia extends Prodotto{
+class Cuccia {
+    use Prodotto;
     protected $altezza;
     protected $largezza;
     protected $profondita;

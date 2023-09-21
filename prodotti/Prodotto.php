@@ -2,13 +2,16 @@
 require_once __DIR__ . '/Cane.php';
 require_once __DIR__ . '/Gatto.php';
 
-class Prodotto
+trait Prodotto
 {
     protected $titoloProdotto;
     protected $prezzoProdotto;
     protected $Animale;
     protected $immagineProdotto;
     protected $immagineAnimal;
+
+
+
     function __construct($_titoloProdotto, $_prezzoProdotto, $_Animale)
     {
         $this->setTitoloProdotto($_titoloProdotto);

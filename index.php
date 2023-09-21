@@ -2,6 +2,8 @@
 require_once __DIR__ . './prodotti/Cibo.php';
 require_once __DIR__ . './prodotti/Gioco.php';
 require_once __DIR__ . './prodotti/Cuccia.php';
+require_once __DIR__ . '/Validatore.php';
+
 
 // $croccantini = new Cibo('CROCCANTINI', 1.2, '100', 'Cane');
 $palla = new Gioco('Palla', '4.99', 'Cane', 'Gomma');
@@ -56,8 +58,16 @@ $cibi = [
         "peso" => "200",
         "animale" => "Cane",
         "cover" => "https://petgreen.shop/media/catalog/product/cache/a8f52adc57a106b2558dcaca7a8745d6/u/l/ultra_eenregy_web_.jpg"
+    ],
+    [
+        "titolo" => "Carne Wow",
+        "prezzo" => "15.99",
+        "peso" => "200",
+        "animale" => "Cane",
+        "cover" => null,
     ]
 ];
+
 
 $CuccieClasslist = [];
 foreach ($cuccie as $cuccia) {
@@ -76,13 +86,22 @@ foreach ($cuccie as $cuccia) {
 
 $CiboListClas = [];
 
+foreach($CiboListClas as $cibo){
+    try{
+        if($cibo->ControllImmage() != true){
+            echo 'ottimo';
+        }
+    }catch(Validatore $e){
+        echo '<p> errore in :'.$e->getMessage().'</p>';
+    }
+    
+}
+
+
 foreach ($cibi as $cibo) {
     $ciboClass = new Cibo(_titoloAlimento: $cibo['titolo'], _prezzoProdotto: $cibo['prezzo'], _PesoAlimento: $cibo['peso'], _animale: $cibo['animale'], cover: $cibo['cover']);
     $CiboListClas[] = $ciboClass;
 }
-
-// var_dump($CiboListClas)
-
 
 ?>
 

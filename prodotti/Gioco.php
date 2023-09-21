@@ -2,7 +2,8 @@
 
 require_once __DIR__ .'./Prodotto.php';
 
-class Gioco extends Prodotto{
+class Gioco {
+    use Prodotto;
     protected $materiale;
 
     function __construct($_titoloProdotto,$_prezzoProdotto,$_animale,$_materiale){
