@@ -1,0 +1,29 @@
+
+.logo{
+    width: 100px;
+    
+}
+
+.lista-cuccie{
+    margin-top: .5rem;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.card-cuccia{
+    flex-basis: 100%;
+}
+
+.alimento-img{
+    background-position: center;
+    width: 300px;
+
+
+}
+.container-img{
+    display: flex;
+    width: 100%;
+
+    justify-content: center;
+}
